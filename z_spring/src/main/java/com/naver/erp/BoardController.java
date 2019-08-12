@@ -41,7 +41,7 @@ public class BoardController {
 		// @RequestMapping 이 붙은 메소드 호출후에 이동하는 JSP페이지에서 ${키값명}으로 꺼낼 수 있다
 	@ModelAttribute("warning")
 	public String gogo() {
-		return "♥수료가 한달 남았어.dddddddd 싹 다 자퇴해♥";
+		return "♥수료가 한달 남았어.싹 다 자퇴해 스벌♥";
 	}
 	
 	//========================================
