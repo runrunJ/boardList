@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- mapper 태그 선언 -->
+<!-- namespace 속성값으로 [DAO 인터페이스 이름] 이 온다-->
+<!-- [DAO 인터페이스] 메소드명과 동일한 id  값을 소유한 태그를 내포하고 있다  -->
+<mapper namespace="com.naver.erp.LoginDAO">
+	<!-- <select>태그 속성 설명 -->
+		<!-- id="getAdmin_idCnt" => SQL 구문의 고유 아이디값 설정. DAO 클래스의 메소드 이름과 동일함 -->
+		<!-- parameterType="hashmap" => SQL 구문에 삽입될 외부 데이터의 자료형 설정 -->
+		<!-- resultType="int" => SQL 구문의 실행 후 리턴값 자료형 설정 -->
+	<select id="getAdminCnt"  parameterType="hashmap"  resultType="int">
+		<!--  #{키값명} => 키값에 대응하는 데이터가 문자열이면 싱클쿼트로 감싼다 -->
+		<!--  ${키값명} => 키값에 대응하는 데이터를 그대로 삽입 -->
+		select count(*)  from admin  where admin_id=#{admin_id} and pwd=#{pwd}
+	</select>
+</mapper>
